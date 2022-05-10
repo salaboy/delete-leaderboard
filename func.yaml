@@ -1,0 +1,30 @@
+version: 0.19.0
+name: delete-leaderboard 
+namespace: ""
+runtime: go
+registry: ""
+image: docker.io/salaboy/delete-leaderboard:latest
+imageDigest:
+build: local
+builder: gcr.io/paketo-buildpacks/builder:base
+builders:
+  base: gcr.io/paketo-buildpacks/builder:base
+  default: gcr.io/paketo-buildpacks/builder:base
+  full: gcr.io/paketo-buildpacks/builder:full
+buildpacks:
+- paketo-buildpacks/go-dist
+- ghcr.io/boson-project/go-function-buildpack:tip
+volumes: []
+buildEnvs: []
+envs:
+- name: REDIS_HOST
+  value: 10.200.130.188
+annotations: {}
+options: {}
+labels: []
+healthEndpoints:
+  liveness: /health/liveness
+  readiness: /health/readiness
+created: 2022-04-10T08:57:28.996216+01:00
+invocation:
+  format: http
