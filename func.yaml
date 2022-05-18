@@ -1,10 +1,10 @@
 version: 0.19.0
-name: delete-leaderboard 
+name: delete-leaderboard
 namespace: ""
 runtime: go
 registry: ""
 image: docker.io/salaboy/delete-leaderboard:latest
-imageDigest:
+imageDigest: sha256:749f334ea6e47373ff9f68056ca91614b86eb3f9c602b40e3be94c2db46ffa69
 build: local
 git: {}
 builder: gcr.io/paketo-buildpacks/builder:base
@@ -19,7 +19,7 @@ volumes: []
 buildEnvs: []
 envs:
 - name: REDIS_HOST
-  value: 10.200.130.188
+  value: 10.200.130.188:6379
 annotations: {}
 options: {}
 labels: []
